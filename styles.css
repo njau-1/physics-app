@@ -916,3 +916,78 @@ body {
   height: 1px;
   opacity: 0;
 }
+
+/* ============ 桌面端适配 ============ */
+@media (min-width: 768px) {
+  body {
+    background: linear-gradient(135deg, #e8edf5 0%, #dce3f0 100%);
+    overflow: auto;
+  }
+
+  #app {
+    max-width: 480px;
+    margin: 20px auto;
+    height: calc(100vh - 40px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.08);
+  }
+
+  .tab-bar {
+    max-width: 480px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .page-container {
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  /* 桌面端 hover 效果 */
+  .feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .feature-card:active { transform: scale(0.98); }
+
+  .tab-item:hover { opacity: 0.8; }
+
+  .tag:hover {
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+  }
+
+  .btn-send:hover, .btn-action:hover, .btn-capture:hover {
+    opacity: 0.85;
+    cursor: pointer;
+  }
+
+  .exp-card-header:hover { background: #f5f7fa; cursor: pointer; }
+  .exp-item:hover { background: #f5f7fa; cursor: pointer; }
+
+  /* 实验详情全屏保持 */
+  .experiment-area {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    max-width: 480px;
+    width: 100%;
+  }
+
+  /* 弹窗居中 */
+  .modal-content {
+    max-width: 400px;
+  }
+}
+
+/* 超大屏：如果超过 480px 就保持比例 */
+@media (min-width: 1200px) {
+  #app {
+    max-width: 460px;
+  }
+}
